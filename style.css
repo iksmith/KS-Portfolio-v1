@@ -25,6 +25,8 @@ body {
     margin-left: 5%;
     margin-right: 5%;
     color: #212121;
+
+    
 }
 
 /* Mobile */
@@ -54,6 +56,7 @@ body {
 
 .darkMode:hover {
     border: 1px solid #212121;
+    cursor: pointer;
 }
 
 .darkModeWrapper {
@@ -144,20 +147,49 @@ body {
 }
 
 
+.homeSection {
+    text-align: center;
+    margin-top: 25%;
+}
 
-
-
-#topHero { 
+#topLine { 
     font-size: 2rem;
 }
 
-#heroHeadLineOne {
-    font-size: 2.5rem;
+#middleLine {
+    font-size: 5rem;
 }
 
-#heroHeadLineTwo {
+@media screen and (max-width: 480px) {
+    #middleLine {
+        font-size: 2rem;
+        line-height: 1rem;
+    }
+}
+
+
+.heroHeadLineTwo {
     font-size: .5rem;
 }
+
+#featureText {
+    color: black;
+}
+
+.typing-container {
+    font-size: 2rem;
+    height: 2.5rem;
+    display: flex;
+    text-align: left;
+}
+
+@media screen and (max-width: 480px) {
+
+    .typing-container {
+        font-size: 2rem;
+    }
+}
+
 
 #heroHeadLineThree {
     font-size: 2.5rem;
@@ -229,6 +261,7 @@ body {
 .tooltip .tooltipText {
     visibility: hidden;
     width: 120px;
+    text-align: center;
     bottom: 160%;
     left: 50%;
     color: #212121;
@@ -239,6 +272,7 @@ body {
     margin-left: -60px;
     position: absolute;
     z-index: 1;
+    font-size: 1rem;
 }
 
 .tooltip:hover .tooltipText {
@@ -247,8 +281,6 @@ body {
 }
 
 /* Badge CSS Profile Section*/
-
-
 
 
 .cardBadge {
@@ -290,8 +322,29 @@ button, #resumeBtn {
     margin-bottom: 5rem;
 }
 
+.devType {
+    font-weight: 600;
+}
+
+.techStack {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 4.5rem;
+    line-height: 3rem;
+}
+
+.stackTitle {
+    font-size: 1rem;
+}
+
+
+
 
 /* Project Section */
+
+.sectionTitle {
+    font-size: 1.5rem;
+}
 
 .projectSection {
     margin-left: 1rem;
@@ -316,3 +369,25 @@ button, #resumeBtn {
     margin-right: 1rem;
     font-size: small;
 }
+
+/* Typing Animation */
+.typing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 42px;
+    background-color: black;
+    margin-left: 8px;
+    animation: blink .6s linear infinite alternate;
+}
+
+@keyframes blink {
+    0% {opacity: 1;}
+    40% {opacity: 1;}
+    60% {opacity: 0;}
+    100% {opacity: 0;}
+  }

@@ -19,19 +19,39 @@ toggleMode();
 
 
 
+// Active Menu Btn & Default Functionality
+
+
+function homeDefault() {
+    $(document).ready(function(e) {
+        $(`#homeBtn`).click();
+    });
+}
+
+homeDefault();
 
 
 
 
 // Home Button Default Functionality
 const homeSection = `
-<div class="homeSection" style="text-align: center;">
-    <p id="heroText" style="font-size: 2rem;">
-        <span id="topHero">Hello World.</span><br>
-        <span style="font-size: 4rem;" id="heroHeadLineOne">I'm Kaleb.</span><br> 
-        <span style="font-size: 1rem;" id="heroHeadLineTwo">Full Stack. Creative Engineer. Builder. Dreamer.</span><br>
-        <span style="font-size: 4rem" id="heroHeadLinethree">& I build things.</span>
-    </p>
+<div class="homeSection">
+
+    <div id="topLine">
+        <span id="topHero">What's Up World.</span><br>
+    </div>
+
+    <div id="middleLine">
+        <span id="heroHeadlineOne" >I'm Kaleb.</span><br> 
+    </div>
+    
+
+    
+    <div class="typing-container">
+        <span id="featureText" class="heroHeadlineTwo"></span>
+        <span class="input-cursor"></span>
+    </div>
+    
 </div>
 `;
 
@@ -61,11 +81,56 @@ const profileSection = `
                 <span style="font-size: .8rem; font-weight: 600;">From builder to builder... </span><br> 
                 My journey began as a Project Manager for luxury multi-million dollar home builders. As a PM, I've mastered the art of transforming visionary concepts into functioning realities. 
                 While the world of construction was full of endless challenges, opportunities, and acheivements, my entrepreneurial spirit, & creativity drove me into the vibrant world of tech. 
-                Now, aiming to combine my PM instinct & creativity with <span>full-stack development</span>. My ambition is to not just enter the tech world, but to innovate with it, leveraging my unique experiences and passions to contribute to the startup ecosystem. <br>
+                Now, aiming to combine my PM instinct & creativity with <span class="devType" style="color: #9146ff;">full-stack development</span>. My ambition is to not just enter the tech world, but to innovate with it, leveraging my unique experiences and passions to contribute to the startup ecosystem. <br>
                 I want to help shape the future.
             </p>
         </div>
     </div>
+
+
+    <div class="techStack">
+    <div class="stackTitle">Tech Stack</div>
+
+    <div class="stackImg">
+
+        <div class="tooltip tooltipContainer">
+            <div class="tooltipText">HTML5</div>
+            <div class="html">
+                <i class="fa-brands fa-html5 fa-xs" style="color: #000000;"></i>
+            </div>
+        </div>
+
+        <div class="tooltip tooltipContainer">
+            <div class="tooltipText">CSS3</div>
+            <div class="css">
+                <i class="fa-brands fa-css3-alt fa-xs" style="color: #000000;"></i>
+            </div>
+        </div>
+
+        <div class="tooltip tooltipContainer">
+            <div class="tooltipText">Javascript</div>
+            <div class="js">
+                <i class="fa-brands fa-js fa-xs" style="color: #000000;"></i>
+            </div>
+        </div>
+
+        <div class="tooltip tooltipContainer">
+            <div class="tooltipText">React</div>
+            <div class="react">
+                <i class="fa-brands fa-react fa-xs" style="color: #000000;"></i>
+            </div>
+        </div>
+
+        <div class="tooltip tooltipContainer">
+            <div class="tooltipText">Node.js</div>
+            <div class="node">
+                <i class="fa-brands fa-node fa-xs" style="color: #000000;"></i>
+            </div>
+        </div>
+
+    </div>
+</div>
+
     <div class="experience">
         <div class="experienceTitle">
             <p style="font-size: .9rem; font-weight: 600;">Work Experience</p>
@@ -171,6 +236,65 @@ const profileSection = `
 `;
 
 
+// Typing Effect Functionality
+
+const carouselText = [
+    {text: "Full-Stack Engineer.", color: "#212121"},
+    {text: "Creative Developer.", color: "#00c0ff"},
+    {text: "Builder.", color: "#FF0000"},
+    {text: "Creator.", color: "#9146ff"},
+    {text: "Gamer.", color: "#32CD32"},
+    {text: "Watcher of Anime.", color: "#F47521"}
+  ]
+  
+  $( document ).ready(async function() {
+    carousel(carouselText, "#featureText")
+  });
+
+async function typeSentence(sentence, eleRef, delay = 100) {
+    const letters = sentence.split("");
+    let i = 0;
+    while(i < letters.length) {
+      await waitForMs(delay);
+      $(eleRef).append(letters[i]);
+      i++
+    }
+    return;
+  }
+
+  async function deleteSentence(eleRef) {
+    const sentence = $(eleRef).html();
+    const letters = sentence.split("");
+    let i = 0;
+    while(letters.length > 0) {
+      await waitForMs(100);
+      letters.pop();
+      $(eleRef).html(letters.join(""));
+    }
+  }
+  
+  async function carousel(carouselList, eleRef) {
+      var i = 0;
+      while(true) {
+        updateFontColor(eleRef, carouselList[i].color)
+        await typeSentence(carouselList[i].text, eleRef);
+        await waitForMs(1500);
+        await deleteSentence(eleRef);
+        await waitForMs(500);
+        i++
+        if(i >= carouselList.length) {i = 0;}
+      }
+  }
+  
+  function updateFontColor(eleRef, color) {
+    $(eleRef).css('color', color);
+  }
+
+  function waitForMs(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms))
+  }
+
+
 
 function createProfile() {
     $(`#profileBtn`).on(`click`, function(e) {
@@ -231,3 +355,7 @@ function createProjects() {
 
 createProjects();
 
+
+
+
+  
