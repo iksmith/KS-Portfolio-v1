@@ -346,6 +346,7 @@ button, #resumeBtn {
     color: white;
     border-radius:6px;
     transition: ease-in-out 0.2s;
+    cursor: pointer;
 }
 
 #resumeBtn:hover {
