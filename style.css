@@ -94,7 +94,7 @@ body {
     padding: .5rem .5rem .5rem .5rem;
     border: none;
     border-radius: .3rem;
-    background-color: rgb(255, 255, 255);
+    background-color: #f9f9f9;
 }
 
 .socialBtn:hover {
@@ -139,7 +139,6 @@ body {
     align-content: center;
     justify-content: center;
     text-align: left;
-    font-size: 4rem;
     font-weight: 600;
     height: 75%;
     overflow-y: auto;
@@ -149,46 +148,52 @@ body {
 
 .homeSection {
     text-align: center;
-    margin-top: 25%;
+    margin-top: 35%;
 }
 
 #topLine { 
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 #middleLine {
-    font-size: 5rem;
+    font-size: 3.5rem;
+    margin-top: 1rem;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 500px) {
     #middleLine {
-        font-size: 2rem;
-        line-height: 1rem;
+        font-size: 3rem;
     }
-}
-
-
-.heroHeadLineTwo {
-    font-size: .5rem;
-}
-
-#featureText {
-    color: black;
-}
-
-.typing-container {
-    font-size: 2rem;
-    height: 2.5rem;
-    display: flex;
-    text-align: left;
-}
-
-@media screen and (max-width: 480px) {
 
     .typing-container {
         font-size: 2rem;
     }
 }
+
+@media screen and (min-width: 680px) {
+    #middleLine {
+        font-size: 4rem;
+    }
+
+    .typing-container {
+        font-size: 3rem;
+    }
+}
+
+#featureText {
+    color: black;
+    font-size: 1.5rem;
+}
+
+.typing-container {
+    position: relative;
+    font-size: 1.8rem;;
+    height: 5rem;
+    width: 20rem;
+    display: flex;
+    text-align: left;
+}
+
 
 
 #heroHeadLineThree {
@@ -294,9 +299,42 @@ p .badge {
 
 /* About Section */
 
+.sectionTitle {
+    font-size: 2rem;
+}
+
 .aboutSection {
     font-weight: 300;
     margin-left: 1rem;
+}
+
+.aboutContent {
+    font-size: 1rem;
+}
+
+.jobSummary {
+    font-size: 1rem;
+}
+
+@media (max-width: 730px) {
+    .aboutContent {
+        font-size: .9rem;
+    }
+
+    .jobSummary {
+        font-size: .9rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .aboutContent {
+        font-size: .8rem;
+    }
+
+    .jobSummary {
+        font-size: .8px;
+    }
+    
 }
 
 .jobSummary {
@@ -307,6 +345,7 @@ button, #resumeBtn {
     background-color: black;
     color: white;
     border-radius:6px;
+    transition: ease-in-out 0.2s;
 }
 
 #resumeBtn:hover {
@@ -327,16 +366,28 @@ button, #resumeBtn {
 }
 
 .techStack {
+    display: flex;flex-direction: column;
     margin-left: 1rem;
     margin-top: 1rem;
     margin-bottom: 4.5rem;
     line-height: 3rem;
 }
 
+
 .stackTitle {
     font-size: 1rem;
 }
 
+
+#stackIcon {
+    margin-right: 2rem;
+}
+
+.resume {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: center;
+}
 
 
 
@@ -346,13 +397,42 @@ button, #resumeBtn {
     font-size: 1.5rem;
 }
 
+#thumbnailImg {
+    height: 140px;
+    width: auto
+}
+
+#projectName a {
+    text-decoration: none;
+    color: #212121;
+    transition: ease-in-out 0.2s;
+}
+
+#projectName:hover a {
+    color: #9146ff;
+}
+
+#urlLink {
+    margin: 5px;
+}
+
 .projectSection {
     margin-left: 1rem;
 }
 
 .projectDescription {
     font-weight: 400;
-    font-size: 2rem;
+    font-size: 1rem;
+}
+
+@media (min-width: 500px) {
+    .projectDescription {
+        font-size: .8rem;
+    }
+
+    .sectionTitle {
+        font-size: .9rem;
+    }
 }
 
 .badges {
@@ -369,6 +449,8 @@ button, #resumeBtn {
     margin-right: 1rem;
     font-size: small;
 }
+
+
 
 /* Typing Animation */
 .typing-container {

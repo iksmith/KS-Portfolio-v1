@@ -5,17 +5,17 @@
 // const addDark = $(`.darkMode`).append(`<i class="fa-regular fa-sun fa-lg" style="color: #000000;"></i>`);
 // const addLight = $(`.darkMode`).append(`<i id="modeToggler" class="fa-solid fa-moon fa-lg" style="color: #000000;"></i>`);
 
-function toggleMode() {
-    $(`.darkMode`).click(function(e) {
-        e.preventDefault();
-        $(`body`).css("background-color", "#212121");
-        $(`body`).css("color", "#ffffff");
-        $(`.badge`).css("color", "#212121");
-    });
+// function toggleMode() {
+//     $(`.darkMode`).click(function(e) {
+//         e.preventDefault();
+//         $(`body`).css("background-color", "#212121");
+//         $(`body`).css("color", "#ffffff");
+//         $(`.badge`).css("color", "#212121");
+//     });
 
-} 
+// } 
 
-toggleMode();
+// toggleMode();
 
 
 
@@ -26,6 +26,9 @@ function homeDefault() {
     $(document).ready(function(e) {
         $(`#homeBtn`).click();
     });
+
+typeEffect();
+
 }
 
 homeDefault();
@@ -45,8 +48,6 @@ const homeSection = `
         <span id="heroHeadlineOne" >I'm Kaleb.</span><br> 
     </div>
     
-
-    
     <div class="typing-container">
         <span id="featureText" class="heroHeadlineTwo"></span>
         <span class="input-cursor"></span>
@@ -60,9 +61,9 @@ function createHome() {
         e.preventDefault();
 
         $(`.content`).empty();
-        $(`.content`).append(homeSection);
-        
+        $(`.content`).append(homeSection);  
     });
+
 }
 
 createHome();
@@ -77,7 +78,7 @@ const profileSection = `
             <p style="font-size: 1.5rem; font-weight: 600;">My Journey 🚀</p>
         </div>
         <div class="aboutContent">
-            <p style="font-size: .8rem;">
+            <p">
                 <span style="font-size: .8rem; font-weight: 600;">From builder to builder... </span><br> 
                 My journey began as a Project Manager for luxury multi-million dollar home builders. As a PM, I've mastered the art of transforming visionary concepts into functioning realities. 
                 While the world of construction was full of endless challenges, opportunities, and acheivements, my entrepreneurial spirit, & creativity drove me into the vibrant world of tech. 
@@ -89,47 +90,45 @@ const profileSection = `
 
 
     <div class="techStack">
-    <div class="stackTitle">Tech Stack</div>
+        <div class="stackTitle">Tech Stack</div>
+            <div class="stackImg">
 
-    <div class="stackImg">
+            <div class="tooltip tooltipContainer">
+                <div class="tooltipText">HTML5</div>
+                <div class="html" id="stackIcon">
+                    <i class="fa-brands fa-html5 fa-2xl" style="color: #000000;"></i>
+                </div>
+            </div>
 
-        <div class="tooltip tooltipContainer">
-            <div class="tooltipText">HTML5</div>
-            <div class="html">
-                <i class="fa-brands fa-html5 fa-xs" style="color: #000000;"></i>
+            <div class="tooltip tooltipContainer">
+                <div class="tooltipText">CSS3</div>
+                <div class="css" id="stackIcon">
+                    <i class="fa-brands fa-css3-alt fa-2xl" style="color: #000000;"></i>
+                </div>
+            </div>
+
+            <div class="tooltip tooltipContainer">
+                <div class="tooltipText">Javascript</div>
+                <div class="js" id="stackIcon">
+                    <i class="fa-brands fa-js fa-2xl" style="color: #000000;"></i>
+                </div>
+            </div>
+
+            <div class="tooltip tooltipContainer">
+                <div class="tooltipText">React</div>
+                <div class="react" id="stackIcon">
+                    <i class="fa-brands fa-react fa-2xl" style="color: #000000;"></i>
+                </div>
+            </div>
+
+            <div class="tooltip tooltipContainer">
+                <div class="tooltipText">Node.js</div>
+                <div class="node" id="stackIcon">
+                    <i class="fa-brands fa-node fa-2xl" style="color: #000000;"></i>
+                </div>
             </div>
         </div>
-
-        <div class="tooltip tooltipContainer">
-            <div class="tooltipText">CSS3</div>
-            <div class="css">
-                <i class="fa-brands fa-css3-alt fa-xs" style="color: #000000;"></i>
-            </div>
-        </div>
-
-        <div class="tooltip tooltipContainer">
-            <div class="tooltipText">Javascript</div>
-            <div class="js">
-                <i class="fa-brands fa-js fa-xs" style="color: #000000;"></i>
-            </div>
-        </div>
-
-        <div class="tooltip tooltipContainer">
-            <div class="tooltipText">React</div>
-            <div class="react">
-                <i class="fa-brands fa-react fa-xs" style="color: #000000;"></i>
-            </div>
-        </div>
-
-        <div class="tooltip tooltipContainer">
-            <div class="tooltipText">Node.js</div>
-            <div class="node">
-                <i class="fa-brands fa-node fa-xs" style="color: #000000;"></i>
-            </div>
-        </div>
-
     </div>
-</div>
 
     <div class="experience">
         <div class="experienceTitle">
@@ -148,7 +147,7 @@ const profileSection = `
                     <p style="font-size: 1.1rem; font-weight: 500;">Project Manager & Estimator (Construction)</p>
                 </div>
                 <div class="jobSummary">
-                    <p style="font-size: .8rem;">
+                    <p>
                         Experienced leader with a proven track record of leading dynamic, cross-functional teams and third-party collaborators through the development lifecycle of large-scale projects valued between $4-6M. 
                         Known for exceptional interpersonal skills, I excel at building trust and fostering collaboration with clients to accurately assess their needs and deliver high-quality, tailored solutions. 
                         My strategic approach to project management has effectively cut project timelines by 10%, enhancing stakeholder satisfaction and increasing our company's reputation & value. I am also committed to empathetic leadership, providing comprehensive onboarding, mentoring, and support to new team members, contractors, and clients, ensuring a cohesive and productive work environment.
@@ -236,64 +235,73 @@ const profileSection = `
 `;
 
 
-// Typing Effect Functionality
+// Home Screen Typing Effect Functionality 
 
-const carouselText = [
-    {text: "Full-Stack Engineer.", color: "#212121"},
-    {text: "Creative Developer.", color: "#00c0ff"},
-    {text: "Builder.", color: "#FF0000"},
-    {text: "Creator.", color: "#9146ff"},
-    {text: "Gamer.", color: "#32CD32"},
-    {text: "Watcher of Anime.", color: "#F47521"}
-  ]
-  
-  $( document ).ready(async function() {
-    carousel(carouselText, "#featureText")
-  });
-
-async function typeSentence(sentence, eleRef, delay = 100) {
-    const letters = sentence.split("");
-    let i = 0;
-    while(i < letters.length) {
-      await waitForMs(delay);
-      $(eleRef).append(letters[i]);
-      i++
-    }
-    return;
-  }
-
-  async function deleteSentence(eleRef) {
-    const sentence = $(eleRef).html();
-    const letters = sentence.split("");
-    let i = 0;
-    while(letters.length > 0) {
-      await waitForMs(100);
-      letters.pop();
-      $(eleRef).html(letters.join(""));
-    }
-  }
-  
-  async function carousel(carouselList, eleRef) {
-      var i = 0;
-      while(true) {
-        updateFontColor(eleRef, carouselList[i].color)
-        await typeSentence(carouselList[i].text, eleRef);
-        await waitForMs(1500);
-        await deleteSentence(eleRef);
-        await waitForMs(500);
-        i++
-        if(i >= carouselList.length) {i = 0;}
+function typeEffect() {
+    const carouselText = [
+        {text: "Full-Stack Engineer.", color: "#212121"},
+        {text: "Creative Developer.", color: "#00c0ff"},
+        {text: "Builder.", color: "#FF0000"},
+        {text: "Creator.", color: "#9146ff"},
+        {text: "Gamer.", color: "#32CD32"},
+        {text: "Watcher of Anime.", color: "#F47521"}
+      ]
+      
+      $( document ).ready(async function() {
+        carousel(carouselText, "#featureText")
+      });
+    
+    async function typeSentence(sentence, eleRef, delay = 100) {
+        const letters = sentence.split("");
+        let i = 0;
+        while(i < letters.length) {
+          await waitForMs(delay);
+          $(eleRef).append(letters[i]);
+          i++
+        }
+        return;
       }
-  }
-  
-  function updateFontColor(eleRef, color) {
-    $(eleRef).css('color', color);
-  }
+    
+      async function deleteSentence(eleRef) {
+        const sentence = $(eleRef).html();
+        const letters = sentence.split("");
+        let i = 0;
+        while(letters.length > 0) {
+          await waitForMs(100);
+          letters.pop();
+          $(eleRef).html(letters.join(""));
+        }
+      }
+      
+      async function carousel(carouselList, eleRef) {
+          var i = 0;
+          while(true) {
+            updateFontColor(eleRef, carouselList[i].color)
+            await typeSentence(carouselList[i].text, eleRef);
+            await waitForMs(1500);
+            await deleteSentence(eleRef);
+            await waitForMs(500);
+            i++
+            if(i >= carouselList.length) {i = 0;}
+          }
+      }
+      
+      function updateFontColor(eleRef, color) {
+        $(eleRef).css('color', color);
+      }
+    
+      function waitForMs(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms))
+      }
+}
 
-  function waitForMs(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms))
-  }
 
+
+
+
+
+
+// Create Profile Section
 
 
 function createProfile() {
@@ -312,7 +320,7 @@ createProfile();
 const projectSection = `
     <div class="projectSection">
         <div class="sectionTitle">
-            <p>Projects</p>
+            <p style="font-size: 1.1rem">Projects</p>
         </div>
 
         <!-- Card Container -->
@@ -320,15 +328,20 @@ const projectSection = `
             <div class="innerProjects">
                 <div class="leftProject">
                     <div class="thumbnail">
-                        <img style="font-size: 1rem;" src="" alt="My Portfolio">
+                    <img id="thumbnailImg" src="Project Thumbnails/ks-portfolio-v1.gif" alt="Personal Portfolio Gif">
                     </div>
                 </div>
                 <div class="rightProject">
                     <div class="projectName">
-                        <p id="projectName" style="font-size: .8rem;">Personal Portfolio V1</p>
+                        <p id="projectName" style="font-size: 1rem;">
+                            <a href="https://github.com/iksmith/KS-Portfolio-v1">
+                                Personal Portfolio V1
+                                <i id="urlLink" class="fa-solid fa-arrow-up-right-from-square fa-sm" style="color: #000000;"></i>
+                            <a/>
+                        </p>
                     </div>
                     <div class="projectDescription">
-                        <p id="projectDescription" style="font-size: .8rem;">My first web dev portfolio, designed by me. The portfolio demonstrates a minimalistic design, as well as an understanding of HTML, CSS, and 🍦 Javascript.</p>
+                        <p id="projectDescription">My first web dev portfolio, designed by me. The portfolio demonstrates a minimalistic design, as well as an understanding of HTML, CSS, and 🍦 Javascript.</p>
                     </div>
                     <div class="badges">
                         <div class="badgeContainer">
