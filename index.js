@@ -143,8 +143,8 @@ const profileSection = `
                 <div class="jobName">
                     <p style="font-size: 1.1rem; font-weight: 500;">Project Manager & Estimator (Construction)</p>
                 </div>
-                <div class="jobSummary">
-                    <p>
+                <div class="jobSummary pmDescriptoin">
+                    <p style"font-size: .8rem;">
                         Experienced leader with a proven track record of leading dynamic, cross-functional teams and third-party collaborators through the development lifecycle of large-scale projects valued between $4-6M. 
                         Known for exceptional interpersonal skills, I excel at building trust and fostering collaboration with clients to accurately assess their needs and deliver high-quality, tailored solutions. 
                         My strategic approach to project management has effectively cut project timelines by 10%, enhancing stakeholder satisfaction and increasing our company's reputation & value. I am also committed to empathetic leadership, providing comprehensive onboarding, mentoring, and support to new team members, contractors, and clients, ensuring a cohesive and productive work environment.
