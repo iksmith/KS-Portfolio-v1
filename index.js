@@ -2,7 +2,7 @@
 
 
 // const removeMode = $(`.darkMode`).empty();
-// const addDark = $(`.darkMode`).append(`<i class="fa-regular fa-sun fa-lg" style="color: #000000;"></i>`);
+// const addDark = $åå`.darkMode`).append(`<i class="fa-regular fa-sun fa-lg" style="color: #000000;"></i>`);
 // const addLight = $(`.darkMode`).append(`<i id="modeToggler" class="fa-solid fa-moon fa-lg" style="color: #000000;"></i>`);
 
 // function toggleMode() {
@@ -21,7 +21,6 @@
 
 // Active Menu Btn & Default Functionality
 
-
 function homeDefault() {
     $(document).ready(function(e) {
         $(`#homeBtn`).click();
@@ -39,7 +38,6 @@ homeDefault();
 // Home Button Default Functionality
 const homeSection = `
 <div class="homeSection">
-
     <div id="topLine">
         <span id="topHero">What's Up World.</span><br>
     </div>
@@ -52,7 +50,6 @@ const homeSection = `
         <span id="featureText" class="heroHeadlineTwo"></span>
         <span class="input-cursor"></span>
     </div>
-    
 </div>
 `;
 

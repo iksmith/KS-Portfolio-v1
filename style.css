@@ -29,9 +29,29 @@ body {
     
 }
 
+.top {
+    position: absolute;
+    display: flex;
+    height: 5rem;
+    width: 97%;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.topContainer {
+    display: flex;
+}
+
+.icon {
+    /* position: absolute; */
+    height: 100px;
+    width: 100px;
+}
+
+
 /* Mobile */
 
-@media (min-width:320px) {
+/* @media (min-width:320px) {
 
     .topContainer {
         position: fixed;
@@ -40,7 +60,7 @@ body {
         width: 90%;
     }
 
-}
+} */
 
 
 /* Top Section */
